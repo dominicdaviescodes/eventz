@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    # @events = Event.all
+    # chained the SQL query in console and copied into index action.
+    # @events = Event.where("starts_at > ?", Time.now).order("starts_at")
+    # the query should be in the model, the method should then call it.
+    @events = Event.upcoming
   end
 
   def show
