@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
 
+  has_many :registrations, dependent: :destroy
+
   # name, location can't be blank
   validates :name, :location, presence: true
 
