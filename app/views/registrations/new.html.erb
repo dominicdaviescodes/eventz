@@ -1,6 +1,7 @@
 <h1>Registration for <%= link_to @event.name, @event %> </h1>
 
 <%= form_with(model: [@event, @registration], local: true) do |f| %>
+  <%= render  "shared/errors", object: @registration %>
 
   <%= f.label :name %>
   <%= f.text_field :name, autofocus: true %>
